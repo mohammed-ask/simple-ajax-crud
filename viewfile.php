@@ -91,7 +91,8 @@
             <div class="message" style="">
              
             </div>
-           
+            <a class='btn-sm btn-secondary' href='exceldwld.php' >download Excel </a>
+                
             <!-- end of navbar navigation -->
             <div class="model-user" style="margin-left:45%">
             
@@ -144,7 +145,9 @@
   <div class="resp" style="background-color:lightgreen;text-align:center;padding:20px;width:70%;margin:auto">
 
 </div>
+<div class="resp2" style="background-color:lightgreen;text-align:center;padding:20px;width:70%;margin:auto">
 
+</div>
 
 <!-- Modal 2 -->
 
@@ -188,7 +191,11 @@
                 $.ajax({
                     type: "post",
                     url: "loadajax.php",
+                    // dataType: 'json',
                    success: function (response) {
+                    
+                     console.log(typeof(response));
+                         
                          $('.resp').html(response) ;  
                     }
                 });
@@ -297,7 +304,17 @@
 });
             };
             func('working fine',4,10,15,36);
+            var arr = ['moh','ken','jen','tuesday'];
+            console.log(arr);
+            var prr = ['wed',...arr,'sun'];
+            console.log(prr);
+
             
+            fetch('loadajax.php')
+  .then((response) =>console.log(response))
+  
+
+  
             
               
         });
